@@ -33,10 +33,13 @@ lowlight.register({ts})
 lowlight.register({xml})
 
 const limit = 20000;
-type Props = {};
+type TipTapTextAreaProps = {
+    content: string;
+    setContent: (content: string) => void;
+};
 
-export const TipTapTextArea = (props: Props) => {
-    const [editorState, setEditorState] = useState("");
+export const TipTapTextArea = ({content, setContent}: TipTapTextAreaProps) => {
+    // const [editorState, setEditorState] = useState("");
     const editor = useEditor({
         autofocus: true,
         extensions:
@@ -58,9 +61,9 @@ export const TipTapTextArea = (props: Props) => {
                     keepAttributes: true,
                 }),
             ],
-        content: editorState,
+        content: content,
         onUpdate: ({ editor }) => {
-            setEditorState(editor.getHTML());
+            setContent(editor.getHTML());
         },
     });
     return (
@@ -71,7 +74,7 @@ export const TipTapTextArea = (props: Props) => {
 
 
             <div className="prose prose-img:rounded-xl prose-headings:underline prose-a:text-blue-600">
-                <EditorContent editor={editor} className="px-4"/>
+                <EditorContent editor={editor} className="bg-red-500 px-4"/>
             </div>
             <div>
                 {editor?.storage.characterCount.characters()}/{limit} characters, [{editor?.storage.characterCount.words()} words]
@@ -79,3 +82,6 @@ export const TipTapTextArea = (props: Props) => {
         </div>
     )
 }
+
+
+

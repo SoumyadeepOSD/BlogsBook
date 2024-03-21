@@ -22,7 +22,7 @@ type Props = {
 const Toolbar = ({ editor }: Props) => {
     if (!editor) return null;
     return (
-        <div className="px-4 py-3 rounded-tl-md rounded-tr-md items-center gap-5 w-full border">
+        <div className="px-4 py-3 rounded-tl-md rounded-tr-md items-center gap-5 w-full border my-4">
             <ToggleGroup type="multiple">
                 <div className="flex flex-row justify-between items-center w-full">
                     <ToggleGroupItem

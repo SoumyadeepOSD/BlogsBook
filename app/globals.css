@@ -7,6 +7,10 @@
 /* Import Tailwind CSS utility styles */
 @tailwind utilities;
 
+html,body,:root{
+  overflow-x: hidden;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -168,4 +172,11 @@ pre {
   .hljs-strong {
     font-weight: 700;
   }
+}
+
+.gradient-text {
+  background-image: linear-gradient(to right, blue,rgba(2, 183, 255, 0.9));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
