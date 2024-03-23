@@ -1,3 +1,4 @@
+import { nextui } from "@nextui-org/react";
 import type { Config } from "tailwindcss"
 import plugin from "tailwindcss/plugin";
 
@@ -7,6 +8,7 @@ const config = {
     './pages/**/*.{ts,tsx}',
     './components/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
+    "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}"
 	],
   prefix: "",
   theme: {
@@ -80,6 +82,7 @@ const config = {
   plugins: [
     require("tailwindcss-animate"), 
     require("@tailwindcss/typography"),
+    nextui(),
     plugin(function({ addBase, theme }) {
       addBase({
         'h1': { fontSize: theme('fontSize.2xl') },

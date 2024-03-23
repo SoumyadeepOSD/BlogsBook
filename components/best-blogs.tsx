@@ -13,11 +13,11 @@ const Blogs = [
         "id": 2,
         "name": "Sujay Sarkar",
         "date": "20-03-24",
-        "category": "Health",
+        "category": "Travel",
         "title": "How to grow hair in 4 months",
         "avatar": "https://w7.pngwing.com/pngs/340/946/png-transparent-avatar-user-computer-icons-software-developer-avatar-child-face-heroes-thumbnail.png"
     },
-    
+
     {
         "id": 3,
         "name": "Sujay Sarkar",
@@ -30,7 +30,7 @@ const Blogs = [
         "id": 4,
         "name": "Sujay Sarkar",
         "date": "20-03-24",
-        "category": "Business",
+        "category": "Science",
         "title": "How to grow hair in 5 months",
         "avatar": "https://w7.pngwing.com/pngs/340/946/png-transparent-avatar-user-computer-icons-software-developer-avatar-child-face-heroes-thumbnail.png"
     },
@@ -53,7 +53,7 @@ const Blogs = [
     },
 
     {
-        "id": 7,
+        "id": 8,
         "name": "Sujay Sarkar",
         "date": "20-03-24",
         "category": "Health",
@@ -61,7 +61,7 @@ const Blogs = [
         "avatar": "https://w7.pngwing.com/pngs/340/946/png-transparent-avatar-user-computer-icons-software-developer-avatar-child-face-heroes-thumbnail.png"
     },
     {
-        "id": 7,
+        "id": 9,
         "name": "Sujay Sarkar",
         "date": "20-03-24",
         "category": "Health",
@@ -70,18 +70,18 @@ const Blogs = [
     },
 
     {
-        "id": 7,
+        "id": 10,
         "name": "Sujay Sarkar",
         "date": "20-03-24",
-        "category": "Health",
+        "category": "Travel",
         "title": "How to grow hair in 5 months",
         "avatar": "https://w7.pngwing.com/pngs/340/946/png-transparent-avatar-user-computer-icons-software-developer-avatar-child-face-heroes-thumbnail.png"
     },
     {
-        "id": 7,
+        "id": 11,
         "name": "Sujay Sarkar",
         "date": "20-03-24",
-        "category": "Health",
+        "category": "Travel",
         "title": "How to grow hair in 5 months",
         "avatar": "https://w7.pngwing.com/pngs/340/946/png-transparent-avatar-user-computer-icons-software-developer-avatar-child-face-heroes-thumbnail.png"
     },
@@ -142,8 +142,8 @@ export const CarouselSlider = ({ selectedLabel }: any) => {
                             </CarouselItem>
                         )
                     }
-                }
-                )}
+                    return null;
+                })}
             </CarouselContent>
             <CarouselPrevious />
             <CarouselNext />

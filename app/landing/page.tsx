@@ -10,15 +10,27 @@ import { BestBlogs } from "@/components/best-blogs";
 import { Badge } from "@/components/ui/badge";
 import { SetStateAction, useState } from "react";
 
-const labels = [
-    "All categories",
-    "News",
-    "Travel",
-    "Self-Development",
-    "Science",
-    "Health",
-    "Cooking",
-    "Business"
+export const labels = [
+"Technology",
+"Travel",
+"Food",
+"Health and Fitness",
+"Fashion",
+"Lifestyle",
+"Business",
+"Personal Finance",
+"Education",
+"Entertainment",
+"Sports",
+"DIY and Crafts",
+"Parenting",
+"Science",
+"Environment and Sustainability",
+"Home Decor",
+"Photography",
+"Art and Culture",
+"Gaming",
+"Book Reviews"
 ];
 
 export const LandingPage = () => {

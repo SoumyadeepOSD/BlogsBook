@@ -4,14 +4,16 @@ import { v } from "convex/values";
 export const createBlog = mutation({
     args:{
         title: v.string(),
+        image: v.string(),
+        labels: v.array(v.string()),
         blogContent: v.string(),
-        file: v.any(),
     },
     handler: async(ctx, args) => {
         await ctx.db.insert("blogs", {
+            image: args.image,
             title: args.title,
-            blogContent: args.blogContent,
-            file: args.file
+            labels: args.labels,
+            blogContent: args.blogContent
         });
     }
 });

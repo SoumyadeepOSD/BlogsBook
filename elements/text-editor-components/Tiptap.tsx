@@ -36,9 +36,10 @@ const limit = 20000;
 type TipTapTextAreaProps = {
     content: string;
     setContent: (content: string) => void;
+    setWordCount: (content: number) => void;
 };
 
-export const TipTapTextArea = ({content, setContent}: TipTapTextAreaProps) => {
+export const TipTapTextArea = ({content, setContent, setWordCount}: TipTapTextAreaProps) => {
     // const [editorState, setEditorState] = useState("");
     const editor = useEditor({
         autofocus: true,
@@ -64,6 +65,7 @@ export const TipTapTextArea = ({content, setContent}: TipTapTextAreaProps) => {
         content: content,
         onUpdate: ({ editor }) => {
             setContent(editor.getHTML());
+            setWordCount(editor.storage.characterCount.characters());
         },
     });
     return (
@@ -74,7 +76,7 @@ export const TipTapTextArea = ({content, setContent}: TipTapTextAreaProps) => {
 
 
             <div className="prose prose-img:rounded-xl prose-headings:underline prose-a:text-blue-600">
-                <EditorContent editor={editor} className="bg-red-500 px-4"/>
+                <EditorContent editor={editor} className="bg-white px-4"/>
             </div>
             <div>
                 {editor?.storage.characterCount.characters()}/{limit} characters, [{editor?.storage.characterCount.words()} words]
