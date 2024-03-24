@@ -13,7 +13,7 @@ const Home = () => {
   };  
 
   const addBlogsHandler = () => {
-    router.push("/blogs/");
+    router.push("/create-blogs");
   }
 
   return (

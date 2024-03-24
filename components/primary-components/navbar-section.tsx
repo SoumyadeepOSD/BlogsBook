@@ -29,8 +29,8 @@ export const NavbarSection = () => {
             </picture>
             <section className="text-slate-400 hidden lg:flex flex-row items-center justify-evenly w-full">
                 <h3 className="group hover:text-slate-200 transition-colors duration-300 cursor-pointer" onClick={()=>{ window.location.href = "/"}}>Home</h3>
-                <h3 className="group hover:text-slate-200 transition-colors duration-300 cursor-pointer">Contact us</h3>
-                <h3 className="group hover:text-slate-200 transition-colors duration-300 cursor-pointer">Blogs</h3>
+                <h3 className="group hover:text-slate-200 transition-colors duration-300 cursor-pointer" onClick={() => { window.location.href = "/contact" }}>Contact us</h3>
+                <h3 className="group hover:text-slate-200 transition-colors duration-300 cursor-pointer" onClick={() => { window.location.href = "/blogs" }}>Blogs</h3>
             </section>
             <section className="text-white lg:hidden">
                 <DropdownMenu>
@@ -42,7 +42,9 @@ export const NavbarSection = () => {
                             window.location.href = "/"
                         }}>Home</DropdownMenuItem>
                         <DropdownMenuItem>Contact</DropdownMenuItem>
-                        <DropdownMenuItem>Blogs</DropdownMenuItem>
+                        <DropdownMenuItem onClick={()=>{
+                            router.replace("/blogs");
+                        }}>Blogs</DropdownMenuItem>
                     </DropdownMenuContent>
                 </DropdownMenu>
             </section>
