@@ -17,6 +17,8 @@ interface BlogsCardProps {
     votes: Array<{ userId: string, upvotes: number, downvotes: number }>,
     image: string,
     labels: Array<string>
+    blogContent: string,
+    _creationTime: string
 };
 
 export const BlogsCard = ({
@@ -25,7 +27,9 @@ export const BlogsCard = ({
     username,
     votes,
     image,
-    labels
+    labels,
+    blogContent,
+    _creationTime
 }: BlogsCardProps) => {
     const { user } = useUser();
     const updateVote = useMutation(api.blogSchema.updateVote);
@@ -43,13 +47,11 @@ export const BlogsCard = ({
             setStatus(true);
             return;
         }
-
         const hasVoted = votes.find(vote => vote.userId === user.id);
         if (hasVoted && hasVoted.upvotes > 0) {
             toast.error("You have already upvoted this post.");
             return;
         }
-
         updateVote({ id: _id, userId: user.id, upvote: true, downvote: false });
     };
 
@@ -59,13 +61,11 @@ export const BlogsCard = ({
             setStatus(true);
             return;
         }
-
         const hasVoted = votes.find(vote => vote.userId === user.id);
         if (hasVoted && hasVoted.downvotes > 0) {
             toast.error("You have already downvoted this post.");
             return;
         }
-
         await updateVote({ id: _id, userId: user.id, upvote: false, downvote: true });
     };
 
@@ -107,7 +107,7 @@ export const BlogsCard = ({
                     ))}
                 </div>
                 <Button className="mt-5 flex flex-row gap-2" onClick={handleOpenBlog}><ArrowUpRightFromSquareIcon /> Read full article</Button>
-                <FullBlog isOpen={isOpen} onClose={onClose} />
+                <FullBlog isOpen={isOpen} onClose={onClose} title={title} blogContent = {blogContent} labels={labels} _creationTime = {_creationTime} userName = {username} image={image}/>
                 <UnsignedModalWarning status={status} setStatus={setStatus}/>
             </CardBody>
         </Card>
