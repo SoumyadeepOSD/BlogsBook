@@ -10,7 +10,7 @@ import { BestBlogs } from "@/components/best-blogs";
 import { Badge } from "@/components/ui/badge";
 import { SetStateAction, useState } from "react";
 
-export const labels = [
+const labels = [
     "All categories",
     "Technology",
     "Travel",
@@ -34,7 +34,7 @@ export const labels = [
     "Book Reviews"
 ];
 
-export const LandingPage = () => {
+const LandingPage = () => {
     const router = useRouter();
     const { isAuthenticated } = useConvexAuth();
     const handleSignin = () => {
@@ -74,3 +74,6 @@ export const LandingPage = () => {
         </div>
     );
 }
+
+
+export { LandingPage, labels };
