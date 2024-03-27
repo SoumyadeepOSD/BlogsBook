@@ -10,7 +10,7 @@ import { BestBlogs } from "@/components/best-blogs";
 import { Badge } from "@/components/ui/badge";
 import { SetStateAction, useState } from "react";
 
-const labels = [
+const Labels = [
     "All categories",
     "Technology",
     "Travel",
@@ -55,7 +55,7 @@ const LandingPage = () => {
             <section className="flex items-center justify-center gap-5 flex-col bg-white p-5 rounded-lg w-[80%] my-5">
                 {/* <div className="flex flex-row items-center justify-evenly w-full"> */}
                 <div className="grid grid-cols-5 md:grid-cols-10 gap-4 md:flex md:flex-wrap">
-                    {labels.map((label) => (
+                    {Labels.map((label) => (
                         <Badge
                             key={label}
                             variant={label === selectedLabel ? "default" : "outline"}

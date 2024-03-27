@@ -172,7 +172,7 @@ import { Button } from "@/components/ui/button";
 import { TipTapTextArea } from "@/elements/text-editor-components/Tiptap";
 import { useUser } from "@clerk/clerk-react";
 
-const labels = [
+const Labels = [
   "All categories",
   "Technology",
   "Travel",
@@ -314,7 +314,7 @@ const BlogsPage = () => {
               <DropdownMenuSeparator />
               <div className="flex flex-col items-start justify-center">
                 {
-                  labels.map((label, index) => (
+                  Labels.map((label, index) => (
                     <DropdownMenuItem key={index} onClick={() => {
                       if (!items.labels.includes(label)) {
                         setItems((data: any) => {
