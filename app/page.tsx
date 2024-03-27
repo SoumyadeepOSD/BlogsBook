@@ -1,6 +1,6 @@
 "use client";
 
-import { LoadingPage } from "@/pages/loading-page";
+import LoadingPage from "@/pages/loading-page";
 import { Authenticated, Unauthenticated, AuthLoading } from "convex/react";
 import LandingPage from "./landing/page";
 
