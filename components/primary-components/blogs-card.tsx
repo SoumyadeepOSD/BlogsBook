@@ -14,10 +14,12 @@ interface BlogsCardProps {
     _id: any,
     title: string,
     username: string,
+    userId: string,
     votes: Array<{ userId: string, upvotes: number, downvotes: number }>,
     image: string,
     labels: Array<string>
     blogContent: string,
+    comments: Array<any>,
     _creationTime: string
 };
 
@@ -25,22 +27,22 @@ export const BlogsCard = ({
     _id,
     title,
     username,
+    userId,
     votes,
     image,
     labels,
     blogContent,
+    comments,
     _creationTime
 }: BlogsCardProps) => {
     const { user } = useUser();
     const updateVote = useMutation(api.blogSchema.updateVote);
-
     const { isOpen, onOpen, onClose } = useDisclosure();
     const [status, setStatus] = useState(false);
     const handleOpenBlog = () => {
         onOpen();
     }
-
-
+    
     const handleUpvote = async () => {
         if (!user) {
             toast.error("You need to be logged in to upvote.");
@@ -107,7 +109,7 @@ export const BlogsCard = ({
                     ))}
                 </div>
                 <Button className="mt-5 flex flex-row gap-2" onClick={handleOpenBlog}><ArrowUpRightFromSquareIcon /> Read full article</Button>
-                <FullBlog isOpen={isOpen} onClose={onClose} title={title} blogContent = {blogContent} labels={labels} _creationTime = {_creationTime} userName = {username} image={image}/>
+                <FullBlog isOpen={isOpen} onClose={onClose} title={title} blogContent = {blogContent} labels={labels} _creationTime = {_creationTime} userName = {username} image={image} _id = {_id} comments={comments} userId={userId}/>
                 <UnsignedModalWarning status={status} setStatus={setStatus}/>
             </CardBody>
         </Card>

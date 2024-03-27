@@ -205,6 +205,8 @@ const BlogsPage = () => {
           labels: items.labels.filter((label) => label !== ""),
           blogContent: blogContent,
           votes: [],
+          comments: [],
+          userId: user?.id!,
         }
       );
     }
