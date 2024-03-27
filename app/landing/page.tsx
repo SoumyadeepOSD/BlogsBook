@@ -76,4 +76,4 @@ const LandingPage = () => {
 }
 
 
-export { LandingPage, labels };
+export default LandingPage;
