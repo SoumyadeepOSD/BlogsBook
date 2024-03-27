@@ -159,7 +159,6 @@ import { useState } from "react";
 import { Input } from "@/components/ui/input"
 import { ArrowDownSquare, CircleCheckIcon, UploadCloudIcon } from "lucide-react";
 import toast, { Toaster } from 'react-hot-toast';
-import { labels } from "../landing/page";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -172,6 +171,31 @@ import { Chip } from "@nextui-org/react";
 import { Button } from "@/components/ui/button";
 import { TipTapTextArea } from "@/elements/text-editor-components/Tiptap";
 import { useUser } from "@clerk/clerk-react";
+
+const labels = [
+  "All categories",
+  "Technology",
+  "Travel",
+  "Food",
+  "Health and Fitness",
+  "Fashion",
+  "Lifestyle",
+  "Business",
+  "Personal Finance",
+  "Education",
+  "Entertainment",
+  "Sports",
+  "DIY and Crafts",
+  "Parenting",
+  "Science",
+  "Environment and Sustainability",
+  "Home Decor",
+  "Photography",
+  "Art and Culture",
+  "Gaming",
+  "Book Reviews"
+];
+
 
 const BlogsPage = () => {
   const { user } = useUser();
